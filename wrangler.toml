@@ -1,0 +1,21 @@
+name = "moontv-p"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+main = ".open-next/worker.js"
+minify = true
+
+# 静态资源配置
+# Cloudflare Workers Assets 用于服务静态文件
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "DB"
+database_name = "moontvplus"
+database_id = "cc8fbae7-21ff-42c9-8d4b-80254c4b9a75"
+
+[vars]
+NODE_ENV = "production"
+BUILD_TARGET = "cloudflare"
